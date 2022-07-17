@@ -5,6 +5,7 @@ import com.aekopar.data.entity.TaskEntity;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ITaskServices {
 
@@ -27,7 +28,7 @@ public interface ITaskServices {
     public ResponseEntity<TaskDto> getTaskById(Long id);
 
     //delete
-    public ResponseEntity<TaskDto> deleteTaskById(Long id);
+    public ResponseEntity<Map<String,Boolean>> deleteTaskById(Long id);
 
     //update
     public ResponseEntity<TaskDto> updateTaskById(Long id, TaskDto taskDto);
