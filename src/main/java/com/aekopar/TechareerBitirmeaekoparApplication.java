@@ -2,7 +2,6 @@ package com.aekopar;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 //exclude:dahil etmemek
 
@@ -12,13 +11,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 }
 )
 
-//Audit
-@EnableJpaAuditing(auditorAwareRef = "auditorAware")
-class TechCareerBitirmeaekoparApplication {
+
+
+public class TechareerBitirmeaekoparApplication {
 
 
     public static void main(String[] args) {
-        SpringApplication.run(TechCareerBitirmeaekoparApplication.class, args);
+        SpringApplication.run(TechareerBitirmeaekoparApplication.class, args);
 
         //DevTools
         System.setProperty("spring.devtools.restart.enabled","false");

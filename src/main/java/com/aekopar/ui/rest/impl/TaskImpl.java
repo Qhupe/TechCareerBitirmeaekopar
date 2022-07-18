@@ -29,32 +29,36 @@ class TaskImpl implements ITaskRest {
         return "index";
     }
 
-    @Override
+    //SAVE
     //http://localhost:8080/api/v1/tasks
+    @Override
     @PostMapping("/tasks")
     public TaskDto createTask(@RequestBody TaskDto taskDto) {
         services.createTask(taskDto);
         return taskDto;
     }
 
-    @Override
+    //LIST
     //http://localhost:8080/api/v1/tasks
+    @Override
     @GetMapping("/tasks")
     public List<TaskDto> getAllEmployes() {
         List<TaskDto> list = services.getAllTasks();
         return list;
     }
 
-    @Override
+    //FIND
     //http://localhost:8080/api/v1/tasks/1
-    @PostMapping("/tasks/{id}")
+    @Override
+    @GetMapping("/tasks/{id}")
     public ResponseEntity<TaskDto> getTaskById(@PathVariable(name = "id") Long id) {
         ResponseEntity<TaskDto> dto = services.getTaskById(id);
         return dto;
     }
 
-    @Override
+    //DELETE
     //http://localhost:8080/api/v1/tasks/1
+    @Override
     @DeleteMapping("/tasks/{id}")
     public ResponseEntity<Map<String, Boolean>> deleteTaskById(@PathVariable(name = "id") Long id) {
         services.deleteTaskById(id);
@@ -63,8 +67,9 @@ class TaskImpl implements ITaskRest {
         return ResponseEntity.ok(response);
     }
 
-    @Override
+    //UPDATE
     //http://localhost:8080/api/v1/tasks/1
+    @Override
     @PutMapping("/tasks/{id}")
     public ResponseEntity<TaskDto> updateTaskById(@PathVariable(name = "id") Long id, @RequestBody TaskDto taskDto) {
         services.updateTask(id, taskDto);

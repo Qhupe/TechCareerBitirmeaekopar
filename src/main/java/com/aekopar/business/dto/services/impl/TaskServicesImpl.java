@@ -91,7 +91,7 @@ public class TaskServicesImpl implements ITaskServices {
 
         TaskEntity entity = dtoEntity(taskDto);
 
-        entityFind.setTaskName(entityFind.getTaskName());
+        entityFind.setTaskName(entity.getTaskName());
 
         TaskEntity saveEntity = repository.save(entityFind);
 
