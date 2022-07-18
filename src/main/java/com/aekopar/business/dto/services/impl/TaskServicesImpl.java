@@ -85,7 +85,7 @@ public class TaskServicesImpl implements ITaskServices {
 
     @Override
     @PutMapping({"/update/tasks","find/update/{id}"})
-    public ResponseEntity<TaskDto> updateTaskById(@PathVariable(name = "id", required = false) Long id, TaskDto taskDto) {
+    public ResponseEntity<TaskDto> updateTask(@PathVariable(name = "id", required = false) Long id, TaskDto taskDto) {
 
         TaskEntity entityFind = repository.findById(id).orElseThrow(()->new ResourceNotFoundException(id+"-Bu id Bulunamadı"));
 

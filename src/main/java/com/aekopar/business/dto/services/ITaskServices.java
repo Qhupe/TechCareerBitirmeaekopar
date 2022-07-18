@@ -31,7 +31,7 @@ public interface ITaskServices {
     public ResponseEntity<Map<String,Boolean>> deleteTaskById(Long id);
 
     //update
-    public ResponseEntity<TaskDto> updateTaskById(Long id, TaskDto taskDto);
+    public ResponseEntity<TaskDto> updateTask(Long id, TaskDto taskDto);
 
 
 
